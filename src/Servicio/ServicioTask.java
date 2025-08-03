@@ -8,6 +8,20 @@ package Servicio;
  *
  * @author jaine
  */
+
+
+import DAO.TaskDB;
+import Modelo.Task;
+import java.util.List;
+
 public class ServicioTask {
-    
+    private TaskDB task = new TaskDB();
+
+    public void crearTask(Task tarea) {
+        task.agregarTask(tarea);
+    }
+
+    public List<Task> obtenerTaskPorProject(int idProject) {
+        return task.obtenerTaskPorProject(idProject);
+    }
 }
